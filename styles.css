@@ -12,8 +12,14 @@
 * {
     margin: 0;
     padding: 0;
+
   }
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 /* Base Styles */
 
@@ -50,7 +56,7 @@ a {
 
 .welcome-section p {
     color: var(--main-cloud);
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-family: "Roboto Slab", sans-serif;
 }
 
@@ -63,6 +69,7 @@ img {
 .nav {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -78,8 +85,8 @@ img {
 }
 
 .nav-list a {
-    display: block;
-    font-size: 2.0rem;
+    display: inline-block;
+    font-size: 2.2rem;
     padding: 2rem;
 }
 
@@ -93,7 +100,7 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100;
+    width: 100%;
     height: 100vh;
     background-image: linear-gradient(var(--main-storm)10%, var(--main-teal));
 }
@@ -102,28 +109,54 @@ img {
 
 .projects-section {
     text-align: center;
-    padding: 10rem 2rem;
+    padding: 10rem;
     background: var(--main-cloud);
+}
+
+.projects-section-header {
+    padding-bottom: 4rem;
+    margin: 0 auto;
+}
+
+.projects-line {
+    border-bottom: 4px solid var(--main-sand);
+    width: 10%;
+    margin: 0 auto;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+    grid-gap: 5rem;
     width: 100%;
     max-width: 1280px;
-    margin: 4rem auto;
+    margin: 5rem auto;
 }
 
+.project-image {
+    background: var(--main-teal);
+    border-radius: 1rem 1rem 0 0; 
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
 .project-tile {
     display: block;
-    background: var(--main-sand);
-    border-radius: 1rem;
+    background-color: var(--main-teal);
+    border-radius: 1em;
+}
+
+.project-tile:hover {
+    transform: scale(1.05);
+    color: var(--main-sunburst);
+    transition: all .2s ease-in-out;
 }
 
 .project-title {
-    font-size: 2rem;
-    padding: 2rem 0.5rem;
+    font-size: 2.5rem;
+    padding: 3rem;
+    margin: auto;
+    height: 20%;
 }
 
 /*Contacts Section*/
@@ -134,7 +167,7 @@ img {
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background: var(--main-sand);
 }
 
@@ -143,15 +176,30 @@ img {
 }
 
 .contacts-section-header >p {
-    font-size: 2rem;
+    font-size: 2.5rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width:100%;
+    max-width: 980px;
+    flex-wrap: wrap;
 }
 
 .contacts-button {
-    display: flex;
-    font-size: 2rem;
-    justify-content: center;
+    font-size: 2.5rem;
+    margin: 2rem;
+}
+
+.contacts-button:hover {
+    transform: scale(1.2);
+    color: var(--main-teal);
+    transition: all .2s ease-in-out;
+}
+
+footer {
+    background-color: var(--main-teal);
+    height: 5vh;
     width: 100%;
-    max-width: 980px;
-    margin-top: 2rem;
-    flex-wrap: wrap;
 }
